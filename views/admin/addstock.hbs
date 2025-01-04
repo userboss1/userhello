@@ -1,0 +1,67 @@
+<body class="bg-white min-h-screen flex items-center justify-center">
+  <div class="font-[poppins] w-full max-w-md bg-[#294b78] rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-white text-center mb-4">Add Stock</h2>
+    <form id="addStockForm" action="/admin/addstock" method="post" class="space-y-4">
+      <!-- Product Name -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-white">Product Name</label>
+        <input type="text" id="name" name="name" required
+          class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-white text-black">
+      </div>
+
+      <!-- Product Description -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-white">Description</label>
+        <textarea id="description" name="description" required
+          class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-white text-black"></textarea>
+      </div>
+
+      <!-- Product Price -->
+      <div>
+        <label for="price" class="block text-sm font-medium text-white">Price</label>
+        <input type="text" id="price" name="price" required
+          class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-white text-black">
+      </div>
+
+      <!-- Product Quantity -->
+      <div>
+        <label for="quantity" class="block text-sm font-medium text-white">Quantity</label>
+        <input type="number" min="0" id="quantity" name="quantity" required
+          class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-white text-black">
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+         
+          class="w-full bg-yellow-500 hover:bg-transparent hover:border-yellow-300 border border-transparent hover:text-yellow-300 duration-300 text-gray-900 font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          Add New Stock
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const priceInput = document.getElementById('price');
+    const form = document.getElementById('addStockForm');
+
+    // Add ₹ symbol while typing
+    priceInput.addEventListener('input', () => {
+      if (!priceInput.value.startsWith('₹')) {
+        priceInput.value = '₹' + priceInput.value.replace(/₹/g, '');
+      }
+    });
+
+    // Remove ₹ symbol before submitting the form
+    form.addEventListener('submit', (e) => {
+      priceInput.value = priceInput.value.replace(/₹/g, ''); // Remove ₹ symbol
+    });
+
+    // Handle blur to reset empty field
+    priceInput.addEventListener('blur', () => {
+      if (priceInput.value === '₹') {
+        priceInput.value = '';
+      }
+    });
+  </script>
+</body>

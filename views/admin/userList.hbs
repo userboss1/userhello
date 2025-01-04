@@ -1,0 +1,39 @@
+<body>
+  <div class="p-2">
+    <button
+      class="w-fit py-2 px-4 ml-auto font-semibold font-[RobotoMono] subpixel-antialiased text-black bg-[#3ce86f] hover:border-[#3ce86f] hover:border border border-transparent hover:bg-transparent hover:text-[#3ce86f] rounded-lg sidebar-button">
+      <a href="/admin/adduser">Add New User</a>
+    </button>
+  </div>
+  <div class="flex-1 p-4" id="main-content">
+    <div class="container mx-auto p-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Iterate Over Users -->
+        {{#each userLog}}
+        <div class="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-300 p-4">
+          <div class="space-y-4">
+            <!-- Username -->
+            <h3 class="text-xl font-semibold text-gray-900">Username: {{this.username}}</h3>
+            <!-- Role ID -->
+            <p class="text-gray-700">Role ID: <span class="font-semibold">{{this.roll_id}}</span></p>
+            <!-- Password (Hidden) -->
+            <p class="text-gray-700">Password: <span class="font-semibold">********</span></p>
+            <!-- Action Buttons -->
+            <div class="flex space-x-4">
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="/admin/edit-user/{{this.username}}">Edit</a>
+              </button>
+              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                onclick="return confirm('Are you sure you want to delete the user {{this.username}}?')">
+                <a href="/admin/delete-user/{{this.username}}">Delete</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/javas.js"></script>
+</body>
+</html>

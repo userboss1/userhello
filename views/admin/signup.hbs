@@ -1,0 +1,58 @@
+
+<body class="bg-gray-900 min-h-screen">
+    <!-- Header Section -->
+   
+
+    <!-- Signup Section -->
+    <section class="container mx-auto flex flex-col lg:flex-row items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <!-- Left Content -->
+        <div class="lg:w-1/2 w-full px-4 mb-8 lg:mb-0 flex flex-col items-center justify-center text-center">
+            <div class="w-24 h-24 rounded-full bg-gray-700 flex items-center justify-center mb-4">
+                <img src="https://via.placeholder.com/100" alt="Avatar" class="rounded-full">
+            </div>
+            <h2 class="text-2xl font-bold text-yellow-400">Hello there! 👋</h2>
+            <p class="mt-2 text-gray-300">Join us to explore amazing opportunities!</p>
+        </div>
+
+        <!-- Right Form -->
+        <div class="lg:w-1/2 w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-9">
+            <h2 class="text-2xl font-bold text-yellow-400 text-center">Sign Up</h2>
+            <form class="mt-6 space-y-4" action="/admin/signIn" method="POST">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-yellow-300">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-gray-700 text-gray-100">
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-yellow-300">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-gray-700 text-gray-100">
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-yellow-300">Password</label>
+                    <input type="password" id="password" name="password" required
+                        class="mt-1 block w-full p-3 border border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 bg-gray-700 text-gray-100">
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit"
+                        class="w-full bg-yellow-500 duration-300  hover:border-yellow-300  hover:border border border-transparent hover:bg-transparent  hover:text-yellow-300 rounded-lg text-gray-900 font-bold py-3 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Footer Link -->
+            <p class="mt-4 text-sm text-center hover:text-yellow-600 text-yellow-300">
+                Already have an account? <a href="/login" class="text-yellow-400 hover:underline">Log in</a>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

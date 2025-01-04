@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "F:/fishweb"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "newrealweb"
+	}
+}

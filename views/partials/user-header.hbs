@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<header >
+  <nav class="mx-auto navbar p-3 flex items-center justify-between text-white bg-[#101820]">
+   {{#if user}}
+                  <h1 class="text-2xl  font-[poppins] ">Hello 👋 <span class=" text-xl p-2 ">{{user.name}}</span></h1>
+         
+            {{/if}}
+    <ul class="nav-links flex gap-7 font-[RobotoMono] text-lg">
+      <li><a class="hover:text-yellow-400 py-2 duration-300 px-6  inline-block "  href="#">Home</a></li>
+      <li><a class="hover:text-yellow-400 py-2 duration-300 px-6   border-transparent transition-all inline-block" href="#" >Cart</a></li>
+      <li><a class="hover:text-yellow-400 py-2 duration-300   border-transparent transition-all  px-6  inline-block" href="#">Products</a></li>
+    </ul>
+    <div class="actions">
+   {{#if user}}
+   
+      <button
+  class="font-semibold font-[RobotoMono] subpixel-antialiased text-black bg-[#FEE715] hover:border-yellow-300 hover:border border border-transparent hover:bg-transparent hover:text-yellow-300 rounded-lg px-6 mr-5 py-2 duration-500"
+  onclick="if (confirm('Are you sure you want to Log Out?')) { window.location.href = 'LogOut'; } return false;"
+>
+  Log Out
+</button>
+
+   {{else}}
+    <button   class="font-semibold   font-[RobotoMono]  subpixel-antialiased  text-black bg-[#FEE715] hover:border-yellow-300  hover:border border border-transparent hover:bg-transparent  hover:text-yellow-300 rounded-lg px-6 mr-5  py-2 duration-500"><a href="SignIn">Sign In</a></button>
+     
+      {{/if}}
+   <a href="admin/signIn">helowww</a>
+   <a href="/logIn " class="bg-green-500 w-fit h-fit p-3">log in</a>
+    </div>
+
+  </nav>
+
+</header>
+{{{body}}}
+<body>
+
+</body>

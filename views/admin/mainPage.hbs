@@ -1,0 +1,54 @@
+<body>
+  <div class="flex-1 p-4" id="main-content">
+    <div class="container mx-auto p-3">
+      <div class="overflow-y-auto max-h-[550px] border border-gray-300 shadow-2xl rounded-xl">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-100">
+            <tr class="border-b">
+              <th class="text-left px-6 py-4 font-medium text-gray-900">Name</th>
+              <th class="text-left px-6 py-4 font-medium text-gray-900">Description</th>
+              <th class="text-left px-6 py-4 font-medium text-gray-900">Price</th>
+              <th class="text-left px-6 py-4 font-medium text-gray-900">Quantity</th>
+              <th class="text-left px-6 py-4 font-medium text-gray-900">Edit/Delete Items</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each stock}}
+            <tr class="border-b hover:bg-gray-50 transition-colors duration-200">
+              <td class="px-6 py-4">{{this.name}}</td>
+              <td class="px-6 py-4">{{this.description}}</td>
+              <td class="px-6 py-4">₹{{this.price}}</td>
+              <td class="px-6 py-4 flex items-center space-x-2">
+                {{#if this.quantity}}
+                <!-- Styled quantity with color based on availability -->
+                <div class="bg-green-200 text-green-800 font-semibold rounded-full px-3 py-1">
+                  {{this.quantity}}
+                </div>
+                {{else}}
+                <!-- No stock style -->
+                <div class="bg-red-200 text-red-800 font-semibold rounded-full px-3 py-1">
+                  No Stock
+                </div>
+                {{/if}}
+              </td>
+              <td>
+                <!-- Edit button with hover effects -->
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                  <a href="/admin/edit-product/{{this._id}}">Edit</a>
+                </button>
+                <!-- Delete button with hover effects -->
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+                  onclick="return confirm('Are you sure you want to delete stocks of {{this.name}}?')">
+                  <a href="/admin/delete/{{this._id}}">Delete</a>
+                </button>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="/javascripts/javas.js"></script>
